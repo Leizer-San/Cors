@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cors-proxy
+    env: node
+    buildCommand: 'npm install'
+    startCommand: 'npm start'
+    plan: free
+    region: frankfurt
+    branch: main
+    autoDeploy: true
