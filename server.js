@@ -28,8 +28,8 @@ app.options('*', (req, res) => {
   res.sendStatus(200);
 });
 
-app.get('/', async (req, res) => {
-  const targetUrl = req.query.url;
+app.get('/proxy/*', async (req, res) => {
+  const targetUrl = req.params[0]; // всё после /proxy/
   if (!targetUrl) return res.status(400).send('Missing url');
 
   try {
